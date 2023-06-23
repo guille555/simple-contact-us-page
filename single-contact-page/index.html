@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--This is a simple page, a 'Contact Us' page. In this example page are included the CSS and JavaScript. Also this page was designed for a resolution of 1920x1080-->
+    <meta charset="UTF-8"/>
+    <meta name="author" content="guille555"/>
+    <meta name="description" content="Example of a simple 'contact us' page"/>
+    <meta name="keywords" content="simple page, contact page"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Simple Contact</title>
+    <style>
+      @font-face {
+        font-family: "OfficeCodePro";
+        src: url("./assets/fonts/officecodeprod-regular-webfont.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      /*normalize.css v8.0.1 | author: github.com/necolas/normalize.css*/
+      /*begin of normalize.css*/
+      button,hr,input{overflow:visible}progress,sub,sup{vertical-align:baseline}[type=checkbox],[type=radio],legend{box-sizing:border-box;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}details,main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:ButtonText dotted 1px}fieldset{padding:.35em .75em .625em}legend{color:inherit;display:table;max-width:100%;white-space:normal}textarea{overflow:auto}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}[hidden],template{display:none}
+      /*end of normalize.css*/
+
+      body {
+        background-color: #222;
+        font-family: "OfficeCodePro";
+        color: #FFF;
+      }
+
+      .header,
+      .footer {
+        background-color: #FFF;
+      }
+
+      .logoContainer {
+        width: 3rem;
+      }
+      
+      .logoContainer > a > img {
+        max-width: 100%;
+      }
+
+      .coreTitle {
+        margin: 0;
+        padding: 1rem;
+        font-size: 3rem;
+      }
+
+      .formContainer {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+
+      .form {
+        display: inline-block;
+        width: 50%;
+        margin-left: 3rem;
+        background-color: rgba(145, 145, 145, 0.25);
+        border-radius: 0.25rem;
+        padding: 1rem;
+      }
+
+      .inputField {
+        margin-bottom: 0.5rem;
+      }
+
+      .inputField:nth-child(6) {
+        text-align: center;
+      }
+
+      .label {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      .input,
+      .textarea {
+        outline: none;
+        border: none;
+        font-family: "OfficeCodePro";
+        font-size: 1rem;
+        width: 99%;
+        padding: 0.25rem;
+      }
+
+      .textarea {
+        resize: none;
+        height: 6rem;
+      }
+
+      .button {
+        border: none;
+        border-radius: 0.25rem;
+        padding: 0.5rem;
+        color: #dadada;
+        background-color: #707070;
+      }
+
+      .imgContainer {
+        width: 24rem;
+        padding: 1rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        background-color: #FFF;
+        border-radius: 0.5rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .imgContainer > img {
+        max-width: 100%;
+      }
+
+      .footer {
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        height: 8rem;
+        color: #000;
+      }
+
+      .footerLogoContainer {
+        width: 3rem;
+        padding: 0.5rem;
+      }
+
+      .footerLogoContainer > img {
+        max-width: 100%;
+      }
+
+      .legalText {
+        margin: 0;
+        padding: 0.25rem;
+        font-family: "OfficeCodePro";
+        font-size: 0.75rem;
+      }
+
+      .message {
+        width: 97.5%;
+        padding: 0.75rem;
+        margin: 0;
+        border-radius: 0.25rem;
+        background-color: #86E998;
+        color: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logoContainer">
+        <a href="#">
+          <img src="./assets/img/paw-prints.svg" alt="logo">
+        </a>
+      </div>
+    </header>
+    <main>
+      <h1 class="coreTitle">Contact Us</h1>
+      <div class="formContainer">
+        <form id="contactEmail" class="form" autocomplete="off">
+          <div class="inputField">
+            <label class="label" for="fullname">Fullname:*</label>
+            <input class="input" type="text" name="fullname" id="fullname" required/>
+          </div>
+          <div class="inputField">
+            <label class="label" for="email">Email:*</label>
+            <input class="input" type="email" name="email" id="email" required/>
+          </div>
+          <div class="inputField">
+            <label class="label" for="phone">Phone:</label>
+            <input class="input" type="tel" name="phone" id="phone"/>
+          </div>
+          <div class="inputField">
+            <label class="label" for="subject">Subject:*</label>
+            <input class="input" type="text" name="subject" id="subject"/>
+          </div>
+          <div class="inputField">
+            <label class="label" for="message">Message:*</label>
+            <textarea class="textarea" name="message" id="message" required></textarea>
+          </div>
+          <div class="inputField">
+            <input class="button" type="submit" value="Send"/>
+          </div>
+        </form>
+        <div class="imgContainer">
+          <img src="./assets/img/email-icon-clipart-1920x1550.png" alt="email sending image"/>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footerLogoContainer">
+        <img src="./assets/img/paw-prints.svg" alt="logo"/>
+      </div>
+      <div class="legalColumn">
+        <small>
+          <p class="legalText">Year of relase 2023</p>
+        </small>
+      </div>
+    </footer>
+    <script>
+      const form = document.getElementById("contactEmail");
+
+      function showSuccessMessage(form) {
+        const text = document.createElement("P");
+        text.textContent = "Message sended successfully";
+        text.classList.add("message");
+        form.append(text);
+      }
+
+      function sendEmail(event) {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        const data = Object.fromEntries(formData);
+        //in this case, we see the data from the email in the browser console. But you can use fetch(sendRoute) to send your email to somewhere
+        console.log(data);
+        showSuccessMessage(form);
+        event.target.reset();
+      }
+
+      form.addEventListener("submit", sendEmail);
+    </script>
+  </body>
+</html>
